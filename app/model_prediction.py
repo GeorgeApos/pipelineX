@@ -12,8 +12,8 @@ models = [
     ('SVM', SVC()),
     ('Naive Bayes', GaussianNB()),
     ('KNN', KNeighborsClassifier()),
-    ('Logistic Regression', LogisticRegression()),
-    ('Gradient Boosting', GradientBoostingClassifier())
+    ('Gradient Boosting', GradientBoostingClassifier()),
+    ('Logistic Regression', LogisticRegression(max_iter=1000))
 ]
 
 
