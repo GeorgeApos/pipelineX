@@ -1,6 +1,6 @@
 import joblib
 
-from app.utils import import_data, get_file_extension
+from app.utils import import_data, get_file_extension, extract_file_name
 from data_preprocessing import preprocess_data, resample_data
 from model_prediction import recommend_best_algorithm, split_train_test, select_features_target, models
 
@@ -45,7 +45,7 @@ def main():
     choice = input()
     if choice == 'y':
         print("Downloading model...")
-        joblib.dump(model, '../models/trained_models/model.pkl')
+        joblib.dump(model, f"models/trained_models/{extract_file_name(file_path)}.pkl")
         print("Model downloaded successfully")
 
 
