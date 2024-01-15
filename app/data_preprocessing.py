@@ -41,6 +41,14 @@ def resample_data(X_train, y_train):
     return X_train, y_train
 
 
+def remove_columns(data):
+    print("Which columns do you want to remove? (separated by comma): ")
+    columns = input().split(',')
+    data = data.drop(columns, axis=1)
+    print("Columns removed successfully")
+    return data
+
+
 def remove_missing_values(data):
     print("Removing missing values...")
     init_size = len(data.index)
@@ -108,9 +116,16 @@ def bin_numerical_values(data, columns):
 def preprocess_data(data):
     print("Do you want to preprocess the data? (y/n): ")
     choice = input()
-
     if choice == 'y':
-        data = remove_missing_values(data)
+        print("Do you want to remove columns? (y/n): ")
+        choice = input()
+        if choice == 'y':
+            data = remove_columns(data)
+
+        print("Do you want to remove missing values? (y/n): ")
+        choice = input()
+        if choice == 'y':
+            data = remove_missing_values(data)
 
         print("Do you want to remove duplicate values? (y/n): ")
         choice = input()
