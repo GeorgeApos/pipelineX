@@ -1,4 +1,4 @@
-# pipelineX
+# Syntheci
 
 ## Automated Machine Learning Pipeline for Software Experiments
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-pipelineX is an ongoing project aimed at automating the machine learning pipeline for software experiments. The goal is to streamline the process of applying machine learning techniques to software-related datasets. This repository contains the work in progress, and you can see the current progress and features.
+Syntheci is an ongoing project aimed at automating the machine learning pipeline for software experiments. The goal is to streamline the process of applying machine learning techniques to software-related datasets. This repository contains the work in progress, and you can see the current progress and features.
 
 ## Features (Work in Progress)
 
