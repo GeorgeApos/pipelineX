@@ -1,4 +1,4 @@
-# Syntheci
+# pipelineX
 
 ## Automated Machine Learning Pipeline for Software Experiments
 
