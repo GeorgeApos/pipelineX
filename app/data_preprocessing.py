@@ -9,35 +9,39 @@ def resample_data(X_train, y_train):
     print("Do you want to resample the data? (y/n): ")
     choice = input()
     if choice == 'y':
-        print("Which resampling technique do you want to use?")
+        print("Choose resampling techniques:")
         print("1. Random Oversampling")
         print("2. Random Undersampling")
         print("3. SMOTE")
         print("4. ADASYN")
+        print("Enter the numbers of the resampling techniques you want to use (comma-separated): ")
 
-        resampling_choice = int(input("Enter your choice (1, 2, 3, or 4): "))
-        if resampling_choice == 1:
-            print("Performing Random Oversampling...")
-            ros = RandomOverSampler()
-            X_train, y_train = ros.fit_resample(X_train, y_train)
-            print("Random Oversampling performed successfully")
-        elif resampling_choice == 2:
-            print("Performing Random Undersampling...")
-            rus = RandomUnderSampler()
-            X_train, y_train = rus.fit_resample(X_train, y_train)
-            print("Random Undersampling performed successfully")
-        elif resampling_choice == 3:
-            print("Performing SMOTE...")
-            smote = SMOTE()
-            X_train, y_train = smote.fit_resample(X_train, y_train)
-            print("SMOTE performed successfully")
-        elif resampling_choice == 4:
-            print("Performing ADASYN...")
-            adasyn = ADASYN()
-            X_train, y_train = adasyn.fit_resample(X_train, y_train)
-            print("ADASYN performed successfully")
-        else:
-            print("Invalid choice. No resampling performed.")
+        resampling_choices = input()
+        selected_resampling_techniques = [int(x) for x in resampling_choices.split(',')]
+
+        for resampling_choice in selected_resampling_techniques:
+            if resampling_choice == 1:
+                print("Performing Random Oversampling...")
+                ros = RandomOverSampler()
+                X_train, y_train = ros.fit_resample(X_train, y_train)
+                print("Random Oversampling performed successfully")
+            elif resampling_choice == 2:
+                print("Performing Random Undersampling...")
+                rus = RandomUnderSampler()
+                X_train, y_train = rus.fit_resample(X_train, y_train)
+                print("Random Undersampling performed successfully")
+            elif resampling_choice == 3:
+                print("Performing SMOTE...")
+                smote = SMOTE()
+                X_train, y_train = smote.fit_resample(X_train, y_train)
+                print("SMOTE performed successfully")
+            elif resampling_choice == 4:
+                print("Performing ADASYN...")
+                adasyn = ADASYN()
+                X_train, y_train = adasyn.fit_resample(X_train, y_train)
+                print("ADASYN performed successfully")
+            else:
+                print(f"Invalid choice: {resampling_choice}. Skipping...")
     return X_train, y_train
 
 
